@@ -1,0 +1,25 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    #AGREGADO
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    #AGREGADO
+    initialization-mode: always
+    platform: postgres
+    data: classpath:/data.sql
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost/MicroserviceB
+    username: postgres
+    password: POSTGRESQL
+    
+server:
+   port: 8081
+   
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
